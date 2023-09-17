@@ -135,38 +135,12 @@
 
           window.history.pushState({}, '', `/challenges/${page}`)
         });
-
-        // Perform any additional actions before the transition starts
-        // For example, you can set up CSS classes or styles for the transition
-
-        // When the transition is ready to run the animation
-        transition.ready.then(() => {
-          root.classList.add('fade-in');
-        });
-
-        // When the animation is finished
-        transition.finished.then(() => {
-          root.classList.remove('fade-in');
-        });
       }
     </script>
 
     <style>
       :root {
         color-scheme: light dark
-      }
-
-      .fade-in {
-        animation: fade-in-animation .3s ease-in-out;
-      }
-
-      @keyframes fade-in-animation {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
       }
     </style>
     <main id="root">
