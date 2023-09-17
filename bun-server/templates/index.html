@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Served by bun</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundImage: {
+            'tatacoa': 'url("/images/desierto_tatacoa.webp")',
+            'colon': 'url("/images/pico_colon.webp")',
+            'cristales': 'url("/images/caño_cristales.webp")',
+            'peñol': 'url("/images/piedra_peñol.webp")',
+            'isla': 'url("/images/san_andres_isla.webp")',
+            'mononoke': 'url("/images/mononoke.webp")',
+            'piracy_flag': 'url("/images/piracy_flag.webp")',
+            'original': 'url("/images/original.webp")',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+  <body>
+    <main class="flex flex-col items-center justify-center h-screen">
+      <!-- change the text-color if the theme is dark to a lighter color -->
+      <h1 class="text-5xl font-bold text-beige-900 dark:text-sky-300">Bun served</h1>
+      <p class="text-xl text-beige-900 dark:text-sky-300">A simple web server written in Bun</p>
+    </main>    
+  </body>
+</html>
