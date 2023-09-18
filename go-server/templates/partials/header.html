@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- add icon of go from public directory its svg-->
     <link rel="icon" type="image/svg+xml" href="/images/Go-Logo_Fuchsia.svg">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,7 +56,10 @@
 
       prevChallengeButton.addEventListener('click', () => {
         const currentChallenge = window.location.pathname.split('/')[2] || 'day_1'
-        if (currentChallenge === 'day_1') window.location.href = '/challenges/day_30'
+        if (currentChallenge === 'day_1') {
+          navigateToPage('day_30')
+          return
+        }
 
         const currentChallengeNumber = parseInt(currentChallenge.split('_')[1])
         const prevChallenge = currentChallengeNumber - 1
@@ -66,7 +68,10 @@
 
       nextChallengeButton.addEventListener('click', () => {
         const currentChallenge = window.location.pathname.split('/')[2] || 'day_1'
-        if (currentChallenge === 'day_30') window.location.href = '/challenges/day_1'
+        if (currentChallenge === 'day_30') {
+          navigateToPage('day_1')
+          return
+        }
 
         const currentChallengeNumber = parseInt(currentChallenge.split('_')[1])
         const nextChallenge = currentChallengeNumber + 1
@@ -76,7 +81,7 @@
       async function navigateToPage(page) {
         // Get the root element
         const root = document.querySelector('#root')
-        const redirectionPath = page.includes('challenges') ? page + '/false' : `/challenges/${page}` + '/false'
+        const redirectionPath = '/challenges/' + page + '/false'
         const response = await fetch(window.location.origin + redirectionPath)
         
         let newContent = await response.text()
