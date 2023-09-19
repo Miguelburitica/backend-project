@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/Miguelburitica/backend-project/go-server/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
 )
@@ -20,6 +21,7 @@ func main() {
         return c.Render("index", fiber.Map{})
     })
 
+    // todo challenge routes
     app.Get("/challenges/:day?/:withHeader?", func(c *fiber.Ctx) error {
         challengeDay := "day_1"
         
@@ -39,6 +41,11 @@ func main() {
         })
     })
 
+    // files routes
+    routes.LoadFileRoutes(app)
+
+    // todo user routes
+    
     // Start the server
     app.Listen(":8080")
 }

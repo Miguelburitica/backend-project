@@ -5,8 +5,10 @@ go 1.21.0
 require github.com/gofiber/fiber/v2 v2.49.2
 
 require (
+	github.com/aws/aws-sdk-go v1.45.12 // indirect
 	github.com/gofiber/template v1.8.2 // indirect
 	github.com/gofiber/utils v1.1.0 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
 )
 
 require (
